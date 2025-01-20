@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.554">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ISTA 421: Introductory Machine Learning</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="ista421_finalProject_fall2024_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ista421_finalProject_fall2024_files/libs/quarto-html/quarto.js"></script>
+<script src="ista421_finalProject_fall2024_files/libs/quarto-html/popper.min.js"></script>
+<script src="ista421_finalProject_fall2024_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ista421_finalProject_fall2024_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ista421_finalProject_fall2024_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ista421_finalProject_fall2024_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ista421_finalProject_fall2024_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ista421_finalProject_fall2024_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ista421_finalProject_fall2024_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">ISTA 421: Introductory Machine Learning</h1>
+<p class="subtitle lead">Machine Learning Final Project</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Instructor:</strong><br>
+Salena Torres Ashton | <a href="mailto:salena@arizona.edu" class="email">salena@arizona.edu</a><br>
+448 Harvill Building, College of Information, University of Arizona<br>
+</p>
+<p><strong>Class Hours:</strong> 11:00 am - 12:15 pm, Tuesdays &amp; Thursdays<br>
+<strong>Class Location:</strong> 332B Harvill, in-person only<br>
+<strong>Office Hours:</strong> 448 Harvill Building, Tuesdays 9:00 - 10:15, or by appointment.</p>
+<hr>
+<section id="machine-learning-final-project-rubric-220-points-total" class="level1">
+<h1><strong>Machine Learning Final Project Rubric (220 Points Total)</strong></h1>
+<section id="a.-dataset-submission-by-14-november-2024-10-points" class="level2">
+<h2 class="anchored" data-anchor-id="a.-dataset-submission-by-14-november-2024-10-points">A. Dataset Submission by <span style="color: red;">14 November 2024</span> (10 Points)</h2>
+<p>Detailed description of the dataset, including sources, qualitative and quantitative features, number of observations (at least 40), and why the dataset is suitable for your project. Homework #3 dataset is okay but you cannot use an ISLP dataset.</p>
+<p>If I already cleared your homework #3 dataset, you do not need to have it cleared again. Otherwise, I need to clear your dataset by 14 November 2024. The reason you’ll want the data set cleared is to be sure that the work you do is suitable for this particular course.&nbsp;</p>
+<p>Do not email the dataset to me or push onto GitHub!</p>
+<p>You must submit the actual dataset here and include the URL to the dataset.</p>
+</section>
+<section id="b.-proposal-submitted-by-14-november-2024-10-points" class="level2">
+<h2 class="anchored" data-anchor-id="b.-proposal-submitted-by-14-november-2024-10-points">B. Proposal Submitted by <span style="color: red;">14 November 2024</span> (10 Points)</h2>
+<ul>
+<li>Problem and research question</li>
+<li>Significance (why we care)</li>
+<li>Method: what skills have you learned from this course to answer your research question? How will you answer your question? What’s your hypothesis?</li>
+<li>1 page max –informal– email is fine</li>
+<li>Do not use any work you have done for other courses</li>
+<li>Do not plagiarize others’ work</li>
+</ul>
+</section>
+<section id="c.-final-project-check-in-and-outline-due-7-december-2024-at-1200-pm-tucson-time-outline-consisting-of-22-lines-see-d2l-for-rubric-50-points" class="level2">
+<h2 class="anchored" data-anchor-id="c.-final-project-check-in-and-outline-due-7-december-2024-at-1200-pm-tucson-time-outline-consisting-of-22-lines-see-d2l-for-rubric-50-points">C. Final Project Check In and Outline due <span style="color: red;">7 December 2024 at 12:00 pm Tucson Time</span> (Outline consisting of 22 lines… see D2L for rubric… 50 Points)</h2>
+</section>
+<section id="d.-final-project-due-17-december-2024-at-1200-pm-tucson-time-formal-exam-schedule-for-the-university-7---10-pages-12-pt-font-1-margins-on-all-sides-single-spaced-lines.-200-points" class="level2">
+<h2 class="anchored" data-anchor-id="d.-final-project-due-17-december-2024-at-1200-pm-tucson-time-formal-exam-schedule-for-the-university-7---10-pages-12-pt-font-1-margins-on-all-sides-single-spaced-lines.-200-points">D. Final Project due <span style="color: red;">17 December 2024 at 12:00 pm Tucson Time</span> (Formal exam schedule for the university; 7 - 10 pages, 12 pt font, 1” margins on all sides, single-spaced lines. 200 Points)</h2>
+<section id="problem-formulation-and-significance-25-points" class="level3">
+<h3 class="anchored" data-anchor-id="problem-formulation-and-significance-25-points"><strong>1. Problem Formulation and Significance (25 Points)</strong></h3>
+<ul>
+<li><strong>Problem Statement (10 Points):</strong> State a clear and concise description of the problem. Include the machine learning task and why it’s important.</li>
+<li><strong>Significance (10 Points):</strong> Explain why this problem matters in your chosen field and how solving it contributes to real-world applications.</li>
+<li><strong>Dataset Description (5 Points):</strong> Detailed description of the dataset, including sources, qualitative and quantitative features, number of observations (at least 40), and why the dataset is suitable for your project.</li>
+</ul>
+</section>
+<section id="exploratory-data-analysis-15-points" class="level3">
+<h3 class="anchored" data-anchor-id="exploratory-data-analysis-15-points"><strong>2. Exploratory Data Analysis (15 Points)</strong></h3>
+<ul>
+<li><strong>Data Exploration (5 Points):</strong> Summary statistics and visualizations that explore both qualitative and quantitative features. Discuss any relationships or patterns found.</li>
+<li><strong>Handling of Missing/Imbalanced Data (5 Points):</strong> Explain how you handled missing, normalized, or imbalanced data.</li>
+<li><strong>Data Visualization (5 Points):</strong> Appropriate visualizations (e.g., histograms, boxplots, scatterplots) and meaningful interpretation of key data patterns and trends.</li>
+</ul>
+</section>
+<section id="model-selection-application-and-evaluation-45-points" class="level3">
+<h3 class="anchored" data-anchor-id="model-selection-application-and-evaluation-45-points"><strong>3. Model Selection, Application, and Evaluation (45 Points)</strong></h3>
+<ul>
+<li><strong>Justify Model Choice (15 Points):</strong> Explain the model(s) chosen with a clear rationale based on dataset characteristics and your research question/ problem statement. Model choice needs to reflect what was learned in class (linear models, tree-based methods, etc.).</li>
+<li><strong>Method Applications (15 Points):</strong> Correctly implement your model(s) and include appropriate hyperparameter tuning. If you choose a non-parametric model, you must include the process of choosing your metrics (e.g., how you chose k for KNN or clustering).
+<ul>
+<li>You must write your own code! No tutorials or cut/paste from tutorials.</li>
+<li>You are allowed to use generative AI under the following conditions:
+<ul>
+<li>You must include all discussions in your references and appendices. Be sure to label all code that is generative in your code comments, from start to finish for any and all sections.</li>
+<li>You must share each discussion with me in an email. Include the link.</li>
+<li>You are responsible for any mistakes that the generative AI creates. If it makes a mistake, I take points from your grade. Mistake areas include but are not limited to: computation, “valid arguments” like a philosopher or computer scientist would define, appropriate context, mathematically sound, correct “formal semantics” like a computational linguist or a computer scientist would define, and getting the correct answers for the correct reasons.</li>
+<li>Again, if the generative AI makes mistakes, you are held accountable for it. It is worth your time to understand the formal meanings of “mistakes”, as listed above. Even if your code is correct, if your written interpretation is too general, ambiguous, does not match your code, or has a mistake, as described above, you are held responsible and points will be taken off.</li>
+<li>You must read a paper about generative AI and write a one-page response. This is due December 1, 2024. This paper will be printed and handed out in class. I will also post this paper on D2L. FAILURE TO GIVE ME YOUR REPONSE ON THIS PAPER (by December 1, 2024) REVOKES YOUR PERMISSION TO USE GENERATIVE AI ON THE FINAL PROJECT. NO EXCEPTIONS AT ALL.</li>
+</ul></li>
+<li>You may use a package to verify your code, but your own model must be written from scratch.</li>
+<li>You are allowed to cut and paste the code you wrote for your homework. You are not allowed to cut/paste from tutorials, demos, or generative AI.</li>
+</ul></li>
+<li><strong>Model Evaluation (15 Points):</strong> Evaluate your model performance using relevant metrics (e.g., accuracy, precision, recall, AUC, RMSE). Compare results across models or hyperparameters and discuss the trade-offs involved.</li>
+</ul>
+</section>
+<section id="results-conclusions-and-real-world-implications-30-points" class="level3">
+<h3 class="anchored" data-anchor-id="results-conclusions-and-real-world-implications-30-points"><strong>4. Results, Conclusions, and Real-World Implications (30 Points)</strong></h3>
+<ul>
+<li><strong>Results Presentation (10 Points):</strong> Present your results in a clear manner using tables, plots, and key statistics. Results should be tied back to the problem statement and dataset.</li>
+<li><strong>Conclusions (10 Points):</strong> Interpret the results, discussing key takeaways and any limitations. Discussion should be thoughtful and relate to the problem objectives.</li>
+<li><strong>Workforce/Graduate School Preparation (10 Points):</strong> Explain how your project developed or sharpened your skills that are relevant for future goals, whether for entering the workforce or applying to graduate school. Specific skills (e.g., data analysis, programming, optimization, focusing on the question at hand, communication, etc… ) should be discussed.</li>
+</ul>
+</section>
+<section id="lightning-talk-in-class-40-points-10-december-2024" class="level3">
+<h3 class="anchored" data-anchor-id="lightning-talk-in-class-40-points-10-december-2024">5. Lightning Talk in Class (40 Points) <strong>10 December 2024</strong></h3>
+<ul>
+<li><strong>3 Minutes Long (5 Points):</strong> Fewer points if less than 2 minutes or more than 3 minutes.</li>
+<li><strong>Structure of Talk (20 Points):</strong> Problem statement, significance, dataset, model selection, evaluation, results, conclusion, and how it will help you with your research/work goals.</li>
+<li><strong>Paying attention to Others’ Lightning Talks (15 Points):</strong> Not on devices, making appropriate eye contact, learning from another’s research.</li>
+</ul>
+</section>
+<section id="code-implementation-and-documentation-35-points.-all-code-must-be-pushed-onto-your-github-repository." class="level3">
+<h3 class="anchored" data-anchor-id="code-implementation-and-documentation-35-points.-all-code-must-be-pushed-onto-your-github-repository.">6. Code Implementation and Documentation (35 Points). All code must be pushed onto your Github repository.</h3>
+<ul>
+<li><strong>Code Completeness and Accuracy (5 Points):</strong> Code should run without errors and complete the project tasks. The project pipeline (data processing, model implementation, etc.) should be fully developed.</li>
+<li><strong>Code Documentation (7 Points):</strong> Be sure that you have an introduction in your script. Document each of your functions. Add line comments to tricky code.</li>
+<li><strong>README.md (5 Points)</strong>: Give instructions for running your code with a README.md file!</li>
+<li><strong>Reproducibility of Visuals (5 Points):</strong> Any figures or tables that you present in your paper need to be generated by this code.</li>
+<li><strong>Dataset Submitted on D2L, not GitHub (5 Points)</strong>: So I can run your code.</li>
+<li><strong>Code Readability and Organization (8 Points):</strong> Code should be well-structured, with clear variable names and appropriate comments. Organization should be conducive to readability and understanding.</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
