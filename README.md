@@ -15,4 +15,4 @@ pip install pandas numpy tqdm gensim matplotlib scikit-learn plotly kaggle
 
 ### Step 2: Run the Jupyter Notebook
 Open and execute the `idea_generator.ipynb` notebook cell-by-cell:
-Instructions are included in the notebook to guide you through setup and purpose of the code.
+Further instructions are included in the notebook to guide you through setup and purpose of each code block.
